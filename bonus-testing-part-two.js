@@ -48,8 +48,8 @@ expect(
   */
 
   // number of times the new caretaker fed the lion. one array entry per day
-  var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
-  var tooHungryDay;
+var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
+var tooHungryDay;
 
   /*
    TODO:
@@ -61,10 +61,10 @@ expect(
   */
 
 
-  expect(
-    typeof(tooHungryDay) === 'number',
-    'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay),
-    'The lion appears to be too hungry after ' + tooHungryDay + ' days...');
+expect(
+  typeof(tooHungryDay) === 'number',
+  'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay),
+  'The lion appears to be too hungry after ' + tooHungryDay + ' days...');
 
   // TODO:
   // Write a second test expecting that tooHungryDay falls within an acceptable answer
