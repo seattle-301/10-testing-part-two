@@ -4,4 +4,4 @@
 ## Wrap up testing and solve the next coding challenge!
 
 - By yourself or with a partner, work through the JS file and follow the instructions.
-  Submit correct, linted code with all tests passing to receive 5 extra bonus points.
+  Submit a PR with correct, linted code with all tests passing to receive 5 extra bonus points.
