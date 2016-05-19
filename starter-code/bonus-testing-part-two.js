@@ -1,7 +1,7 @@
-/* Welcome back to oue testing exercises! This practice module
+/* Welcome back to our testing exercise! This practice module
     will allow you to become even more familiar with testing
     concepts. We test to check the I/O of our apps. That is - we are not
-    checking for HOW something works, but the end RESULT and
+    checking for HOW something works, but rather the end RESULT and
     state of a particular place in our application.
 */
 
@@ -25,7 +25,7 @@ function expect(expression, failureMessage, successMessage) {
     to see what happens when it fails, and change `ricksFaveAnimal`
     to get it to pass!
 */
-var ricksFaveAnimal = 'heyena';
+var ricksFaveAnimal = 'hyena';
 
 expect(
   ricksFaveAnimal === 'penguin',
