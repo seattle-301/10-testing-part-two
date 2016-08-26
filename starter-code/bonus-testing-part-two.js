@@ -13,24 +13,22 @@
     functionality first to then refactor the test to pass.
     This is common practice in testing ('red-green' refactoring).
 */
-function expect(expression, failureMessage, successMessage) {
-  if (!expression) {
-    console.log('test failed:', failureMessage);
-    return;
+function assert(expression, successMessage, failureMessage) {
+  var currentTest = assert.caller.name;
+  if (expression) {
+    return console.log('\n' + currentTest +
+      ' test passing:', successMessage
+    );
   }
-  console.log('test passed:', successMessage);
+  console.log('\n' + currentTest +
+      ' test failing:', failureMessage
+    );
 }
 
 /* Below is an example of our test in action. Run this file in node
     to see what happens when it fails, and change `ricksFaveAnimal`
     to get it to pass!
 */
-var ricksFaveAnimal = 'hyena';
-
-expect(
-  ricksFaveAnimal === 'penguin',
-  'ricksFavoriteAnimal should equal penguin, but currently equals ' + ricksFaveAnimal,
-  'ricksFavoriteAnimal equals penguin!');
 
   // BEGIN WORK BELOW - test code by running `node bonus-testing-part-two.js`
   //  in your terminal!
@@ -51,6 +49,16 @@ expect(
 var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
 var tooHungryDay;
 
+assert(
+  typeof(tooHungryDay) === 'number',
+  'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay),
+  'The lion appears to be too hungry after ' + tooHungryDay + ' days...');
+
+  /* TODO:
+     Write a second test expecting that tooHungryDay falls within an acceptable answer
+     based on the number of days available in the array. */
+
+
   /*
    TODO:
    Cycle through the days in mealsPerDay. At each day, print out the average
@@ -59,14 +67,3 @@ var tooHungryDay;
    pondering protein supplements (the first day the average dips below 4
    meals)
   */
-
-
-expect(
-  typeof(tooHungryDay) === 'number',
-  'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay),
-  'The lion appears to be too hungry after ' + tooHungryDay + ' days...');
-
-  // TODO:
-  // Write a second test expecting that tooHungryDay falls within an acceptable answer
-  // based on the number of days available in the array. Remember to:
-  // pass in your expression, and write a failure and a success message.
