@@ -6,13 +6,6 @@
 */
 
 
-/* As a refresher, presented again is a basic example of a test
-    "framework" where our test is a function that we can reuse
-    to check against different components of our application.
-    The `!expression` may look odd - we test for failing
-    functionality first to then refactor the test to pass.
-    This is common practice in testing ('red-green' refactoring).
-*/
 function assert(expression, successMessage, failureMessage) {
   var currentTest = assert.caller.name;
   if (expression) {
@@ -24,11 +17,6 @@ function assert(expression, successMessage, failureMessage) {
       ' test failing:', failureMessage
     );
 }
-
-/* Below is an example of our test in action. Run this file in node
-    to see what happens when it fails, and change `ricksFaveAnimal`
-    to get it to pass!
-*/
 
   // BEGIN WORK BELOW - test code by running `node bonus-testing-part-two.js`
   //  in your terminal!
@@ -55,9 +43,8 @@ assert(
   'The lion appears to be too hungry after ' + tooHungryDay + ' days...');
 
   /* TODO:
-     Write a second test expecting that tooHungryDay falls within an acceptable answer
+     Write a second test asserting that tooHungryDay falls within an acceptable answer
      based on the number of days available in the array. */
-
 
   /*
    TODO:
