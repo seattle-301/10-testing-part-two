@@ -83,9 +83,12 @@ function withinBounds() {
 
 mealsPerDay.reduce(function(acc, num, idx, arr) {
   acc += num;
-  var avg = (acc / (idx+1));
-  if (avg < 4 && !tooHungryDay) tooHungryDay = idx + 1;
-  console.log ('day ' + (idx+1) + ':' , avg);
+  var whichDay = idx + 1,
+    avg = (acc / (whichDay));
+
+  if (avg < 4 && !tooHungryDay) tooHungryDay = whichDay;
+  
+  console.log ('day ' + (whichDay) + ':' , avg);
   return acc;
 }, 0);
 
