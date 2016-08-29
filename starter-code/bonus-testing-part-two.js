@@ -37,20 +37,58 @@ function assert(expression, successMessage, failureMessage) {
 var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
 var tooHungryDay;
 
-assert(
-  typeof(tooHungryDay) === 'number',
-  'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay),
-  'The lion appears to be too hungry after ' + tooHungryDay + ' days...');
+function isNumber() {
+  assert(
+    typeof(tooHungryDay) === 'number',
+    'The lion appears to be too hungry after ' + tooHungryDay + ' days...',
+    'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay)
+  );
+};
 
-  /* TODO:
-     Write a second test asserting that tooHungryDay falls within an acceptable answer
-     based on the number of days available in the array. */
+/* TODO:
+   Write a second test asserting that tooHungryDay falls within an acceptable answer
+   based on the number of days available in the array. */
 
-  /*
-   TODO:
-   Cycle through the days in mealsPerDay. At each day, print out the average
-   number of meals/day the lion got since the new caretaker started.
-   tooHungryDay should receive the number of days before the lion started
-   pondering protein supplements (the first day the average dips below 4
-   meals)
-  */
+function positiveNum() {
+  assert(
+    tooHungryDay > 0,
+    'tooHungryDay is a positive number.',
+    'tooHungryDay should be a positive number but is instead "' + typeof(tooHungryDay) + '".'
+  );
+}
+
+function isInt() {
+  assert(
+    tooHungryDay % 1 === 0,
+    'tooHungryDay is a valid integer.',
+    'tooHungryDay should be an integer but is instead "' + tooHungryDay % 1 + '".'
+  );
+}
+
+function withinBounds() {
+  assert(
+    tooHungryDay <= mealsPerDay.length,
+    'tooHungryDay is within our array\'s range',
+    'tooHungryDay should be within 1 and ' + mealsPerDay.length + ' but is instead "' + tooHungryDay + '".'
+  );
+}
+
+/*
+ TODO:
+ Cycle through the days in mealsPerDay. At each day, determine the average
+ number of meals the lion got since the new caretaker started. Once the avg
+ dips below 4, tooHungryDay should receive the day the lion chose a protein
+ supplement.
+*/
+
+mealsPerDay.reduce(function(acc, num, idx, arr) {
+  acc += num;
+  var avg = (acc / (idx+1));
+  if (avg < 4 && !tooHungryDay) tooHungryDay = idx + 1;
+  console.log ('day ' + (idx+1) + ':' , avg);
+  return acc;
+}, 0);
+
+positiveNum();
+isInt();
+withinBounds();
