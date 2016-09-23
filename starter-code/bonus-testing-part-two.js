@@ -36,8 +36,8 @@ var tooHungryDay;
 
 assert(
   typeof(tooHungryDay) === 'number',
-  'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay),
-  'The lion appears to be too hungry after ' + tooHungryDay + ' days...');
+  'The lion appears to be too hungry after ' + tooHungryDay + ' days...'),
+  'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay);
 
   /* TODO:
      Write a second test asserting that tooHungryDay falls within an acceptable answer
