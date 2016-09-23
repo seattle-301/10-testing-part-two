@@ -7,15 +7,13 @@
 
 
 function assert(expression, successMessage, failureMessage) {
-  var currentTest = assert.caller.name;
+  var green = '  \x1b[32m(test passing):\x1b[m';
+  var red = '  \x1b[31m(test failing):\x1b[0m';
+  var test = '\x1b[35m' + assert.caller.name + '\x1b[m';
   if (expression) {
-    return console.log('\n' + currentTest +
-      ' test passing:', successMessage
-    );
+    return console.log(test,'\n', green, successMessage);
   }
-  console.log('\n' + currentTest +
-      ' test failing:', failureMessage
-    );
+  console.log(test, '\n', red, failureMessage);
 }
 
   // BEGIN WORK BELOW - test code by running `node bonus-testing-part-two.js`
@@ -33,7 +31,6 @@ function assert(expression, successMessage, failureMessage) {
    diet with the caretaker.
   */
 
-  // number of times the new caretaker fed the lion. one array entry per day
 var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
 var tooHungryDay;
 
@@ -48,9 +45,9 @@ assert(
 
   /*
    TODO:
-   Cycle through the days in mealsPerDay. At each day, print out the average
-   number of meals/day the lion got since the new caretaker started.
-   tooHungryDay should receive the number of days before the lion started
+   Cycle through the days in mealsPerDay. Log the cumulative average
+   meals/day the lion ate since the new caretaker started.
+   tooHungryDay should be equal to the day the lion started
    pondering protein supplements (the first day the average dips below 4
-   meals)
+   meals) Remember: humans count days starting at 1!
   */
