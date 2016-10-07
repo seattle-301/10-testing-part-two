@@ -1,20 +1,11 @@
+var assert = require('./vendor/assert');
+
 /* Welcome back to our testing exercise! This practice module
     will allow you to become even more familiar with testing
-    concepts. We test to check the I/O of our apps. That is - we are not
+    concepts. We test to check the OUTPUT of our code. That is - we are not
     checking for HOW something works, but rather the end RESULT and
     state of a particular place in our application.
 */
-
-
-function assert(expression, successMessage, failureMessage) {
-  var green = '  \x1b[32m(test passing):\x1b[m';
-  var red = '  \x1b[31m(test failing):\x1b[0m';
-  var test = '\x1b[35m' + assert.caller.name + '\x1b[m';
-  if (expression) {
-    return console.log(test,'\n', green, successMessage);
-  }
-  console.log(test, '\n', red, failureMessage);
-}
 
   // BEGIN WORK BELOW - test code by running `node bonus-testing-part-two.js`
   //  in your terminal!
@@ -34,21 +25,34 @@ function assert(expression, successMessage, failureMessage) {
 var mealsPerDay = [5, 4, 3, 6, 2, 4, 3, 4, 5, 1];
 var tooHungryDay;
 
-assert(
-  typeof(tooHungryDay) === 'number',
-  'The lion appears to be too hungry after ' + tooHungryDay + ' days...',
-  'tooHungryDay should be a number but instead is a data type of ' + typeof(tooHungryDay)
-);
+function testIsNumber() {
+  assert(
+    typeof(tooHungryDay) === 'number',
+    'The lion appears to be too hungry after ' + tooHungryDay + ' days...',
+    'tooHungryDay should be a number but is instead a data type of ' + typeof tooHungryDay
+  );
+}
 
   /* TODO:
-     Write a second test asserting that tooHungryDay falls within an acceptable answer
+     Write at least one more test function that calls assert to test
+     whether tooHungryDay falls within an acceptable answer
      based on the number of days available in the array. */
 
-  /*
-   TODO:
+  // Bonus! Can you think of other things to test for?
+  // Repeat the process for additonal points!
+
+
+  /* TODO:
    Cycle through the days in mealsPerDay. Log the cumulative average
    meals/day the lion ate since the new caretaker started.
    tooHungryDay should be equal to the day the lion started
    pondering protein supplements (the first day the average dips below 4
    meals) Remember: humans count days starting at 1!
+
+   When ready, execute this program in your terminal with node
+   (node bonus-testing-part-two)  :-)
   */
+
+
+
+testIsNumber();
